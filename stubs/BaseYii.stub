@@ -1,15 +1,55 @@
-<?php declare(strict_types=1);
+<?php
+/**
+ * Copyright 2021 Practically.io All rights reserved
+ *
+ * Use of this source is governed by a BSD-style
+ * licence that can be found in the LICENCE file or at
+ * https://www.practically.io/copyright/
+ */
+declare(strict_types=1);
 
 namespace yii;
 
+/**
+ * Gets the application start timestamp.
+ */
+defined('YII_BEGIN_TIME') or define('YII_BEGIN_TIME', /** @var float $x */ $x = microtime(true));
+/**
+ * This constant defines the framework installation directory.
+ */
+defined('YII2_PATH') or define('YII2_PATH', /** @var string $x */ $x = __DIR__);
+/**
+ * This constant defines whether the application should be in debug mode or not. Defaults to false.
+ */
+defined('YII_DEBUG') or define('YII_DEBUG', /** @var bool $x */ $x = false);
+/**
+ * This constant defines in which environment the application is running. Defaults to 'prod', meaning production environment.
+ * You may define this constant in the bootstrap script. The value could be 'prod' (production), 'dev' (development), 'test', 'staging', etc.
+ */
+defined('YII_ENV') or define('YII_ENV', /** @var string $x */ $x = 'prod');
+/**
+ * Whether the application is running in the production environment.
+ */
+defined('YII_ENV_PROD') or define('YII_ENV_PROD', /** @var bool $x */ $x = YII_ENV === 'prod');
+/**
+ * Whether the application is running in the development environment.
+ */
+defined('YII_ENV_DEV') or define('YII_ENV_DEV', /** @var bool $x */ $x = YII_ENV === 'dev');
+/**
+ * Whether the application is running in the testing environment.
+ */
+defined('YII_ENV_TEST') or define('YII_ENV_TEST', /** @var bool $x */ $x = YII_ENV === 'test');
+/**
+ * This constant defines whether error handling should be enabled. Defaults to true.
+ */
+defined('YII_ENABLE_ERROR_HANDLER') or define('YII_ENABLE_ERROR_HANDLER', /** @var bool $x */ $x = true);
 
 class BaseYii
 {
     /**
-     * @template T
-     * @param  class-string<T>|array{class: class-string<T>}|callable(): T $type
+     * @template T of object
+     * @param class-string<T>|array{class: class-string<T>}|callable(): T $type
      * @param array<mixed> $params
-     *
      * @return T
      */
     public static function createObject($type, array $params = []);

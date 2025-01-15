@@ -1,0 +1,33 @@
+<?php
+/**
+ * Copyright 2021 Practically.io All rights reserved
+ *
+ * Use of this source is governed by a BSD-style
+ * licence that can be found in the LICENCE file or at
+ * https://www.practically.io/copyright/
+ */
+declare(strict_types=1);
+
+namespace yii\db;
+
+/**
+ * @method ActiveQuery<static> find()
+ */
+class ActiveRecord extends BaseActiveRecord
+{
+    /**
+     * @param array $attributes
+     * @param string|array $condition
+     * @param array $params
+     *
+     * @return int
+     */
+    public static function updateAll($attributes, $condition = '', $params = []) {}
+
+    /**
+     * @param ActiveRecordInterface $record
+     *
+     * @return bool
+     */
+    public function equals($record) {}
+}

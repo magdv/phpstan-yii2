@@ -1,0 +1,34 @@
+<?php
+/**
+ * Copyright 2021 Practically.io All rights reserved
+ *
+ * Use of this source is governed by a BSD-style
+ * licence that can be found in the LICENCE file or at
+ * https://www.practically.io/copyright/
+ */
+declare(strict_types=1);
+
+namespace yii\db;
+
+use yii\base\Model;
+
+class BaseActiveRecord extends Model implements ActiveRecordInterface
+{
+    /**
+     * @template TModelOne of ActiveRecord
+     * @param class-string<TModelOne> $class
+     * @param array $link
+     *
+     * @psalm-return ActiveQuery<TModelOne>
+     */
+    public function hasOne($class, $link): ActiveQueryInterface {}
+
+    /**
+     * @template TModelMany of ActiveRecord
+     * @param class-string<TModelMany> $class
+     * @param array $link
+     *
+     * @psalm-return ActiveQuery<TModelMany>
+     */
+    public function hasMany($class, $link): ActiveQueryInterface {}
+}

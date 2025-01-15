@@ -1,0 +1,23 @@
+<?php
+/**
+ * Copyright 2021 Practically.io All rights reserved
+ *
+ * Use of this source is governed by a BSD-style
+ * licence that can be found in the LICENCE file or at
+ * https://www.practically.io/copyright/
+ */
+declare(strict_types=1);
+
+namespace yii\db;
+
+use yii\base\Component;
+
+/**
+ * @template-covariant TModel
+ *
+ * @method BatchQueryResult<mixed, TModel> each(int $batchSize = 100, ?Connection $db = null)
+ * @method TModel|null one($db = null)
+ * @method array<mixed, TModel> all($db = null)
+ */
+class Query extends Component implements QueryInterface, ExpressionInterface
+{}

@@ -1,5 +1,5 @@
 {
-    "name": "proget-hq/phpstan-yii2",
+    "name": "magdv/phpstan-yii2",
     "type": "library",
     "description": "Yii2 extension for PHPStan",
     "license": "MIT",
@@ -23,6 +23,9 @@
         "phpunit/phpunit": "^8.0",
         "yiisoft/yii2": "^2.0.42",
         "phpstan/phpstan-phpunit": "^1.0"
+    },
+    "replace": {
+        "proget-hq/phpstan-yii2": "*"
     },
     "autoload": {
         "psr-4": {
